@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- No robots -->
+  <meta name="robots" content="noindex">  
+  <title>Markdown Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+	<div id="editor">
+		<!-- Links text are into the txt in app.js, this type of data is needed got 2-way data binding -->
+		<textarea ref="textarea" v-model="txt"></textarea>
+	</div>
+	<div id="gutter"></div>
+	<div id="preview">
+		<!-- Use this if you want to see html -->
+		<div v-html="markdown"></div>
+	</div>
+  	<div id="statusbar">
+		  <!-- functions from app.js, {{ }} is used when you want to see text -->
+		<div>{{ created }}  {{ characters }} CHARACTERS, {{ words }} WORDS</div>
+	</div>
+</div>
+<!-- javascript libraries-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<!-- This library does translation to markdown -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script  src="app.js"></script>
+<script  src="ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+  <script>
+	  window.data = '<%= data %>';
+  </script>
+</head>
+<body>
+<div id="app">
+	<div id="editor">
+		<textarea ref="textarea" v-model="txt"></textarea>
+	</div>
+	<div id="gutter"></div>
+	<div id="preview">
+		<div v-html="markdown"></div>
+	</div>
+  	<div id="statusbar">
+		<div class="buttons"></div>	
+		<div>{{ characters }} CHARACTERS</div>
+	</div>
+</div>
+<script  src="ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.7.0/marked.min.js'></script>
+<script  src="app.js"></script>
+</body>
+</html>
